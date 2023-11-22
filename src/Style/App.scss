@@ -1,0 +1,29 @@
+.foodBlock{
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 10%;
+    .food_footer{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .food_text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        color: black;
+        p{
+            width: 50px;
+            height: 30px;
+            font-size: 18px;
+            background-color: rgba(128, 128, 128, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+        }
+    }
+}
+
