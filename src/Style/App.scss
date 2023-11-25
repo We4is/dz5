@@ -1,29 +1,68 @@
-.foodBlock{
-    width: 350px;
-    margin: 0 auto;
-    margin-top: 10%;
-    .food_footer{
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-    .food_text{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        color: black;
-        p{
-            width: 50px;
-            height: 30px;
-            font-size: 18px;
-            background-color: rgba(128, 128, 128, 0.5);
+.none{
+    display: none;
+}
+.modal_block{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.508);
+    z-index: 100;
+}
+main{
+
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    .food_modal{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.501);
+    }  
+    .foodBlock{
+        width: 350px;
+        margin-top: 80px;
+        .food_footer{
+            width: 90%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .food_text{
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            border-radius: 15px;
+            width: 80%;
+            color: black;
+            p{
+                width: 50px;
+                height: 30px;
+                font-size: 18px;
+                background-color: rgba(128, 128, 128, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+            }
         }
     }
+    .food_right{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 70%;
+        h1{
+            margin-bottom: 20px;
+        }
+        .food_cards-right{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    
 }
-

@@ -1,0 +1,21 @@
+[{ 
+      "name": "Супер сырный",
+      "weight": "512г",
+      "price": 550,
+      "img": "./src/assets/burger.png",
+      "id": 1
+    },
+    {
+      "name": "Картошка фри",
+      "weight": "180г",
+      "price": 245,
+      "img": "./src/assets/potato.png",
+      "id": 2
+    },
+    {
+      "name": "Жгучий хот-дог",
+      "weight": "245г",
+      "price": 239,
+      "img": "./src/assets/sausage.png",
+      "id": 3
+}]
