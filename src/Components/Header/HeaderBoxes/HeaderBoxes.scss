@@ -1,0 +1,15 @@
+.header_box, .header_box-choose{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 126px;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px 10px 5px 10px;
+    color: black;
+    cursor: pointer;
+}
+.header_box-choose{
+    background-color: #FFAB08;
+    border-radius: 20px;
+}
