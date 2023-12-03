@@ -17,6 +17,15 @@ export default function Main() {
       setIndexUser(id)
   }
 
+
+  function addActiveBurger(activeBurger){
+    const trueUser = burgersArrActive.find((item) => item.name === activeBurger.name)
+    if (trueUser) {return}
+    const lastId = burgersArrActive[burgersArrActive.length - 1].id
+    activeBurger.id = lastId + 1
+    setBurgersArrActive((prevstate) => [... prevstate, activeBurger])
+  }
+
   return (
     <>
       <main>
@@ -35,6 +44,7 @@ export default function Main() {
                 burgersArrAll={burgersArrAll}
                 setBurgersArrAll={setBurgersArrAll}
                 openModalWindow={openModalWindow}
+                addActiveBurger={addActiveBurger}
               />
             </div>
           </div>

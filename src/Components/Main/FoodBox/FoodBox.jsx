@@ -8,6 +8,8 @@ export default function FoodBox(foodArr) {
     foodArr.burgersArrActive.forEach(item =>{
       sum += item.price
     })
+
+
     const [count, setCount] = useState(foodArr.burgersArrActive.length);
     const [endPrice, setEndPrice] = useState(sum);
 
@@ -30,6 +32,7 @@ export default function FoodBox(foodArr) {
         setEndPrice(endPrice + price)
     }
 
+    
     return (
     <>
       <div className="main_container-active">

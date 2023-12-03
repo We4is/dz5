@@ -1,12 +1,22 @@
-//import { useState } from "react";
+import { useState } from "react";
 import "./FoodModal.scss";
 import close from "../../../assets/close.png";
 
 export default function FoodModal({item, setShowModal}) {
+  const [count, setCount] = useState(1);
+  function solveCount(solveElem) {
+    if (count === 1 && solveElem === -1) {
+      setShowModal(false)
+    }
+    setCount(count + solveElem);
+  }
+
+
+
   return (
     <>
-      <div className="modal">
-        <div className="modal_container">
+      <div className="modal" onClick={()=>{setShowModal(false)}} >
+        <div className="modal_container"  onClick={(e)=>e.stopPropagation()}>
           <div className="modal_container-upper">
             <h1>{item.name}</h1>
             <img src={close} alt="" onClick={()=>{setShowModal(false)}}/>
@@ -21,10 +31,21 @@ export default function FoodModal({item, setShowModal}) {
                   return <li key={item.id}>{item}</li>
                 })}
               </ul>
-              <div className="modal_container-main-footer">
+              <div className="modal_container-main-text-footer">
                 <p>{item.weight}, {item.weight}</p>
               </div>
             </div>
+          </div>
+          <div className="modal_container-footer">
+                <div className="modal_container-footer-button-calc">
+                    <button className="modal_container-footer-button">Добавить</button>
+                    <div className="modal_container-footer-calc">
+                        <button onClick={() => {solveCount(-1)}}>-</button>
+                        <p>{count}</p>
+                        <button onClick={() => {solveCount(+1)}}>+</button>
+                    </div>
+                </div>
+                <p>{item.price}Р</p>
           </div>
         </div>
       </div>
