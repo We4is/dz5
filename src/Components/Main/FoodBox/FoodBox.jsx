@@ -16,7 +16,7 @@ export default function FoodBox(foodArr) {
     const [count, setCount] = useState(foodArr.burgersArrActive.length);
     const [endPrice, setEndPrice] = useState(sum);
 
-
+    
     function sumCount(solveElem){
         setCount(count + solveElem)
     }
