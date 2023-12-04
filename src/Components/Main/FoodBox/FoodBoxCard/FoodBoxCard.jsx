@@ -14,7 +14,7 @@ export default function FoodBoxCard({ name, img, weight, price, id, sumCount, de
 
   return (
     <>
-      <div className="main_container-active-block" key={id}>
+      <div className="main_container-active-block" id={id}>
         <p className="cross" onClick={()=>{deleteActiveBlock(id, count, price)}}>+</p>
         <div className="main_container-active-block-left">
           <img src={img} alt="" />

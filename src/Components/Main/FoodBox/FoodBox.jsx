@@ -2,9 +2,12 @@ import { useState } from "react";
 import "./FoodBox.scss";
 import FoodBoxCard from "./FoodBoxCard/FoodBoxCard.jsx";
 import skuter from '../../../assets/skuter.png'
-let sum = 0
+
+
 
 export default function FoodBox(foodArr) {
+
+    let sum = 0
     foodArr.burgersArrActive.forEach(item =>{
       sum += item.price
     })
@@ -17,7 +20,6 @@ export default function FoodBox(foodArr) {
     function sumCount(solveElem){
         setCount(count + solveElem)
     }
-
 
     function deleteActiveBlock(id, number, price){
       const newArr = [...foodArr.burgersArrActive]

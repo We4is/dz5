@@ -9,7 +9,7 @@ export default function FoodCards({burgersArrAll, openModalWindow, addActiveBurg
         <>
             {burgersArrAll.map(item =>{
                 return (
-                <div className="main_container-all-block" key={item.id}  onClick={()=>{openModalWindow(item.id)}}>
+                <div className="main_container-all-block" key={item.id} id={item.id}  onClick={()=>{openModalWindow(item.id)}}>
                     <img src={item.img} alt="" />
                     <div className="main_container-all-block-text">
                         <h3>{item.price}Р</h3>

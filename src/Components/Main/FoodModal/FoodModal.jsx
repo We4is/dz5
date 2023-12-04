@@ -2,7 +2,9 @@ import { useState } from "react";
 import "./FoodModal.scss";
 import close from "../../../assets/close.png";
 
-export default function FoodModal({item, setShowModal}) {
+export default function FoodModal({item, setShowModal, addActiveBurger}) {
+
+
   const [count, setCount] = useState(1);
   function solveCount(solveElem) {
     if (count === 1 && solveElem === -1) {
@@ -38,7 +40,7 @@ export default function FoodModal({item, setShowModal}) {
           </div>
           <div className="modal_container-footer">
                 <div className="modal_container-footer-button-calc">
-                    <button className="modal_container-footer-button">Добавить</button>
+                    <button className="modal_container-footer-button" onClick={() => {addActiveBurger(item, count), setShowModal(false)}}>Добавить</button>
                     <div className="modal_container-footer-calc">
                         <button onClick={() => {solveCount(-1)}}>-</button>
                         <p>{count}</p>

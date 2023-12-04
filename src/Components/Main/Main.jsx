@@ -5,31 +5,45 @@ import FoodBox from "./FoodBox/FoodBox.jsx";
 import FoodCards from "./FoodCards/FoodCards.jsx";
 import FoodModal from "./FoodModal/FoodModal.jsx";
 
-
 export default function Main() {
-  const [burgersArrActive, setBurgersArrActive] = useState(burgersArr.burgersActive);
+  const [burgersArrActive, setBurgersArrActive] = useState(
+    burgersArr.burgersActive
+  );
   const [burgersArrAll, setBurgersArrAll] = useState(burgersArr.burgersAll);
-  const [showModal, setShowModal] = useState(false)
-  const [indexUser, setIndexUser] = useState(0)
+  const [showModal, setShowModal] = useState(false);
+  const [indexUser, setIndexUser] = useState(0);
 
-  function openModalWindow(id){
-      setShowModal(true)
-      setIndexUser(id)
+  function openModalWindow(id) {
+    setShowModal(true);
+    setIndexUser(id);
   }
 
-
-  function addActiveBurger(activeBurger){
-    const trueUser = burgersArrActive.find((item) => item.name === activeBurger.name)
-    if (trueUser) {return}
-    const lastId = burgersArrActive[burgersArrActive.length - 1].id
-    activeBurger.id = lastId + 1
-    setBurgersArrActive((prevstate) => [... prevstate, activeBurger])
+  function addActiveBurger(activeBurger) {
+    if (burgersArrActive.length == 0) {
+      return setBurgersArrActive((prevstate) => [...prevstate, activeBurger]);
+    }
+    const trueUser = burgersArrActive.find(
+      (item) => item.name === activeBurger.name
+    );
+    if (trueUser) {
+      return;
+    }
+    const lastId = burgersArrActive[burgersArrActive.length - 1].id;
+    const copyActiveBurger = { ...activeBurger };
+    copyActiveBurger.id = lastId + 1;
+    setBurgersArrActive((prevstate) => [...prevstate, copyActiveBurger]);
   }
 
   return (
     <>
       <main>
-        {showModal && <FoodModal item={burgersArrAll[indexUser - 1]} setShowModal={setShowModal}/>}
+        {showModal && (
+          <FoodModal
+            item={burgersArrAll[indexUser - 1]}
+            setShowModal={setShowModal}
+            addActiveBurger={addActiveBurger}
+          />
+        )}
         <div className="main_container">
           <div className="main_container-left">
             <FoodBox
@@ -40,7 +54,7 @@ export default function Main() {
           <div className="main_container-right">
             <h1>Бургеры</h1>
             <div className="main_container-right-blocks">
-                <FoodCards
+              <FoodCards
                 burgersArrAll={burgersArrAll}
                 setBurgersArrAll={setBurgersArrAll}
                 openModalWindow={openModalWindow}
