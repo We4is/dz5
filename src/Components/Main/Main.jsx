@@ -23,7 +23,7 @@ export default function Main() {
   // FoodBox
   let sum = 0;
   burgersArrActive.forEach((item) => {
-    sum += item.resultPrice;
+    sum += item.price;
   });
   const [endPrice, setEndPrice] = useState(sum);
   const [burgersValue, setBurgersValue] = useState(burgersArrActive.length);
