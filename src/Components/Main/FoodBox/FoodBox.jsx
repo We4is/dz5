@@ -3,21 +3,28 @@ import "./FoodBox.scss";
 import FoodBoxCard from "./FoodBoxCard/FoodBoxCard.jsx";
 import skuter from "../../../assets/skuter.png";
 
-export default function FoodBox(foodArr) {
+export default function FoodBox({
+  burgersValue,
+  setburgersValue,
+  burgersArrActive,
+  setBurgersArrActive,
+  setEndPrice,
+  endPrice,
+}) {
   function sumCount(solveElem) {
-    foodArr.setCount(foodArr.count + solveElem);
+    setburgersValue(burgersValue + solveElem);
   }
 
-  function deleteActiveBlock(id, number, price) {
-    const newArr = [...foodArr.burgersArrActive];
+  function deleteActiveBlock(id, solveElem, price) {
+    const newArr = [...burgersArrActive];
     const newFoodArr = newArr.filter((item) => item.id !== id);
-    foodArr.setBurgersArrActive(newFoodArr);
-    sumCount(-number);
-    getEndPrice(-(number * price));
+    setBurgersArrActive(newFoodArr);
+    sumCount(-solveElem);
+    getEndPrice(-(solveElem * price));
   }
 
   function getEndPrice(price) {
-    foodArr.setEndPrice(foodArr.endPrice + price);
+    setEndPrice(endPrice + price);
   }
 
   return (
@@ -25,10 +32,10 @@ export default function FoodBox(foodArr) {
       <div className="main_container-active">
         <div className="main_container-active-text">
           <h2>Корзина</h2>
-          <p>{foodArr.count}</p>
+          <p>{burgersValue}</p>
         </div>
         <div className="main_container-active-blocks">
-          {foodArr.burgersArrActive.map((item) => {
+          {burgersArrActive.map((item) => {
             return (
               <FoodBoxCard
                 {...item}
@@ -42,7 +49,7 @@ export default function FoodBox(foodArr) {
         </div>
         <div className="main_container-active-footer">
           <p>Итого</p>
-          <span>{foodArr.endPrice}Р</span>
+          <span>{endPrice}Р</span>
         </div>
         <div className="main_container-active-button">
           <button>Оформить заказ</button>

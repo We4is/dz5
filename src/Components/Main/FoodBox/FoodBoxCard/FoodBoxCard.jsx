@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./FoodBoxCard.scss";
 
 
-export default function FoodBoxCard({ name, img, weight, price, id, sumCount, deleteActiveBlock, getEndPrice }) {
-  const [count, setCount] = useState(1);
+export default function FoodBoxCard({ name, img, weight, price, id, sumCount, deleteActiveBlock, getEndPrice, resultCount}) {
+  const [count, setCount] = useState(resultCount);
   function solveCount(solveElem) {
     if (count === 1 && solveElem === -1) {
       deleteActiveBlock(id, count, price)

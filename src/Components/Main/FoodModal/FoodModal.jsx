@@ -1,11 +1,11 @@
-//import { useState } from "react";
+import { useState } from "react";
 import "./FoodModal.scss";
 import close from "../../../assets/close.png";
 
-export default function FoodModal({item, setShowModal, addActiveBurger, countModal, setCountModal}) {
+export default function FoodModal({item, setShowModal, addActiveBurger}) {
+  const [countModal, setCountModal] = useState(1);
 
 
-  console.log(countModal);
   function solveCount(solveElem) {
     if (countModal === 1 && solveElem === -1) {
       setShowModal(false)
