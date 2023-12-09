@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./FoodModal.scss";
 import close from "../../../assets/close.png";
 
-export default function FoodModal({ item, setShowModal, addActiveBurger }) {
+export default function FoodModal({ item, setShowModal, addActiveBurger}) {
   const [countModal, setCountModal] = useState(1);
+
 
   function solveCount(solveElem) {
     if (countModal === 1 && solveElem === -1) {

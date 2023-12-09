@@ -10,11 +10,13 @@ export default function Main() {
   const [burgersArrActive, setBurgersArrActive] = useState(
     burgersArr.burgersActive
   );
+
   const [burgersArrAll, setBurgersArrAll] = useState(burgersArr.burgersAll);
   const [indexUser, setIndexUser] = useState(0);
 
   // Modal
   const [showModal, setShowModal] = useState(false);
+
   function openModalWindow(id) {
     setShowModal(true);
     setIndexUser(id);
@@ -25,30 +27,35 @@ export default function Main() {
   burgersArrActive.forEach((item) => {
     sum += item.price;
   });
+
   const [endPrice, setEndPrice] = useState(sum);
   const [burgersValue, setBurgersValue] = useState(burgersArrActive.length);
 
-  function addActiveBurger(activeBurger) {
+  function addActiveBurger(activeBurger, countModal = 1) {
     const trueUser = burgersArrActive.find(
       (item) => item.name === activeBurger.name
     );
     if (trueUser) {
       return;
     }
-    if (burgersArrActive.length == 0) {
-      setBurgersArrActive((prevstate) => [...prevstate, activeBurger]);
-      setBurgersValue(1);
-      setEndPrice(activeBurger.price);
-      return;
+    
+    const copyActiveBurger = { ...activeBurger }; 
+    if(burgersArrActive.length !== 0){
+      const lastId = burgersArrActive[burgersArrActive.length - 1].id; 
+      copyActiveBurger.id = lastId + 1;
     }
-
-    const lastId = burgersArrActive[burgersArrActive.length - 1].id;
-    const copyActiveBurger = { ...activeBurger };
-    copyActiveBurger.id = lastId + 1;
-
+    else{
+      const lastId = 1
+      copyActiveBurger.id = lastId + 1;
+    }
+    
+    
+    if (countModal) {
+      copyActiveBurger.resultCount = countModal;
+    }
     setBurgersArrActive((prevstate) => [...prevstate, copyActiveBurger]);
-    setEndPrice(sum + activeBurger.price);
-    setBurgersValue(burgersArrActive.length + 1);
+    setEndPrice(endPrice + activeBurger.price * copyActiveBurger.resultCount);
+    setBurgersValue(burgersValue + copyActiveBurger.resultCount);
   }
   return (
     <>

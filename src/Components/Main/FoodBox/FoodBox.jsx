@@ -14,7 +14,6 @@ export default function FoodBox({
   function sumCount(solveElem) {
     setburgersValue(burgersValue + solveElem);
   }
-
   function deleteActiveBlock(id, solveElem, price) {
     const newArr = [...burgersArrActive];
     const newFoodArr = newArr.filter((item) => item.id !== id);
@@ -26,7 +25,6 @@ export default function FoodBox({
   function getEndPrice(price) {
     setEndPrice(endPrice + price);
   }
-
   return (
     <>
       <div className="main_container-active">
@@ -35,6 +33,8 @@ export default function FoodBox({
           <p>{burgersValue}</p>
         </div>
         <div className="main_container-active-blocks">
+          
+
           {burgersArrActive.map((item) => {
             return (
               <FoodBoxCard
