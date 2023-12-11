@@ -35,28 +35,36 @@ export default function Main() {
     const trueUser = burgersArrActive.find(
       (item) => item.name === activeBurger.name
     );
+
+    const copyActiveBurger = { ...activeBurger };
+
+    if (burgersArrActive.length !== 0) {
+      const lastId = burgersArrActive[burgersArrActive.length - 1].id;
+      copyActiveBurger.id = lastId + 1;
+    } else {
+      const lastId = 1;
+      copyActiveBurger.id = lastId + 1;
+    }
+
+    
     if (trueUser) {
+      const copyArr = [...burgersArrActive]
+      copyArr.forEach(item =>{
+        if(copyActiveBurger.id - 1 == item.id){
+          item.resultCount += 1
+        } 
+      })
+      setBurgersArrActive(copyArr)
+      
       return;
     }
-    
-    const copyActiveBurger = { ...activeBurger }; 
-    if(burgersArrActive.length !== 0){
-      const lastId = burgersArrActive[burgersArrActive.length - 1].id; 
-      copyActiveBurger.id = lastId + 1;
-    }
-    else{
-      const lastId = 1
-      copyActiveBurger.id = lastId + 1;
-    }
-    
-    
-    if (countModal) {
-      copyActiveBurger.resultCount = countModal;
-    }
-    setBurgersArrActive((prevstate) => [...prevstate, copyActiveBurger]);
+
+    copyActiveBurger.resultCount = countModal;
     setEndPrice(endPrice + activeBurger.price * copyActiveBurger.resultCount);
     setBurgersValue(burgersValue + copyActiveBurger.resultCount);
+    setBurgersArrActive((prevstate) => [...prevstate, copyActiveBurger]);
   }
+
   return (
     <>
       <main>
@@ -69,6 +77,7 @@ export default function Main() {
         )}
         <div className="main_container">
           <div className="main_container-left">
+            {console.log(burgersArrActive)}
             <FoodBox
               burgersArrActive={burgersArrActive}
               setBurgersArrActive={setBurgersArrActive}

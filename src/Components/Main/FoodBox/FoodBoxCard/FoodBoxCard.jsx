@@ -10,10 +10,10 @@ export default function FoodBoxCard({
   sumCount,
   deleteActiveBlock,
   getEndPrice,
-  resultCount
+  resultCount,
 }) {
-
   const [count, setCount] = useState(resultCount);
+
   function solveCount(solveElem) {
     if (count === 1 && solveElem === -1) {
       deleteActiveBlock(id, count, price);
@@ -21,7 +21,7 @@ export default function FoodBoxCard({
     setCount(count + solveElem);
     sumCount(solveElem);
   }
-  
+
   return (
     <>
       <div className="main_container-active-block" id={id}>
