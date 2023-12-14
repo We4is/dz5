@@ -13,7 +13,6 @@ export default function FoodBoxCard({
   resultCount,
 }) {
   const [count, setCount] = useState(resultCount);
-
   function solveCount(solveElem) {
     if (count === 1 && solveElem === -1) {
       deleteActiveBlock(id, count, price);

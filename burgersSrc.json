@@ -2,54 +2,63 @@
 [
     {
         "name": "Бургеры",
+        "path":"/",
         "img": "./src/assets/cheesBurger.png",
         "style": "header_box-choose",
         "id": 1
     },
     {
         "name": "Шаурма",
+        "path": "shaurma",
         "img": "./src/assets/burito.png",
         "style": "header_box",
         "id": 2
     },
     {
         "name": "Десерты",
+        "path": "desserts",
         "img": "./src/assets/doughnut.png",
         "style": "header_box",
         "id": 3
     },
     {
         "name": "Комбо",
+        "path": "combo",
         "img": "./src/assets/fastfood.png",
         "style": "header_box",
         "id": 4
     },
     {
         "name": "Хот-Доги",
+        "path": "hotDogs",
         "img": "./src/assets/hotdog.png",
         "style": "header_box",
         "id": 5
     },
     {
         "name": "Соусы",
+        "path": "sauce",
         "img": "./src/assets/ketchup.png",
         "style": "header_box",
         "id": 6
     },
     {
         "name": "Вок",
+        "path": "vok",
         "img": "./src/assets/noodles.png",
         "style": "header_box",
         "id": 7
     },
     {
         "name": "Закуски",
+        "path": "snacks",
         "img": "./src/assets/onion.png",
         "style": "header_box",
         "id": 8
     },
     {
         "name": "Пицца",
+        "path": "pizza",
         "img": "./src/assets/pizza.png",
         "style": "header_box",
         "id": 9

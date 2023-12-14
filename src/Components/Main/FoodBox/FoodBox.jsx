@@ -5,14 +5,14 @@ import skuter from "../../../assets/skuter.png";
 
 export default function FoodBox({
   burgersValue,
-  setburgersValue,
+  setBurgersValue,
   burgersArrActive,
   setBurgersArrActive,
   setEndPrice,
   endPrice,
 }) {
   function sumCount(solveElem) {
-    setburgersValue(burgersValue + solveElem);
+    setBurgersValue(burgersValue + solveElem);
   }
   function deleteActiveBlock(id, solveElem, price) {
     const newArr = [...burgersArrActive];
@@ -33,8 +33,6 @@ export default function FoodBox({
           <p>{burgersValue}</p>
         </div>
         <div className="main_container-active-blocks">
-          
-
           {burgersArrActive.map((item) => {
             return (
               <FoodBoxCard

@@ -2,20 +2,21 @@
 import "./FoodCards.scss";
 
 export default function FoodCards({
-  burgersArrAll,
+  item,
   openModalWindow,
   addActiveBurger,
+  id
 }) {
   return (
     <>
-      {burgersArrAll.map((item) => {
+      {item.map((item) => {
         return (
           <div
             className="main_container-all-block"
             key={item.id}
             id={item.id}
             onClick={() => {
-              openModalWindow(item.id);
+              openModalWindow(item.id, id);
             }}
           >
             <img src={item.img} alt="" />
