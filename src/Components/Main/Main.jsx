@@ -81,8 +81,7 @@ export default function Main() {
               />
             </div>
             <div className="main_container-right">
-              <h1>Бургеры</h1>
-              <div className="main_container-right-blocks">
+              
                 <Routes>
                   {foodArrAll.map((item) => {
                     return <Route
@@ -95,13 +94,14 @@ export default function Main() {
                           openModalWindow={openModalWindow}
                           addActiveBurger={addActiveBurger}
                           id={item[0].id}
+                          name={item[0].h1}
                         />
                       }
                     />;
                   })}
                   <Route path="*" element={<Error />} />
                 </Routes>
-              </div>
+              
             </div>
           </div>
         </main>

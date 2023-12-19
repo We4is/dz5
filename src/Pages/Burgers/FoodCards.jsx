@@ -5,10 +5,13 @@ export default function FoodCards({
   item,
   openModalWindow,
   addActiveBurger,
-  id
+  id,
+  name
 }) {
   return (
     <>
+          <h1>{name}</h1>
+        <div className="main_container-right-blocks">
       {item.map((item) => {
         return (
           <div
@@ -40,6 +43,7 @@ export default function FoodCards({
           </div>
         );
       })}
+      </div>
     </>
   );
 }
