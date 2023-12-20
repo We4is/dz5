@@ -29,13 +29,13 @@
     }
   ],
   "AllFood": [
-    [
-      {
+    {
+      "foodId": {
         "path": "/",
         "id": 1,
         "h1": "Бургеры"
       },
-      [
+      "foodInfo": [
         {
           "name": "Мясная бомба",
           "weight": "520г",
@@ -140,15 +140,15 @@
           "resultPrice": 560
         }
       ]
-    ],
-    [
-      {
-        "path": "shaurma",
+    },
+    {
+      "foodId": {
+        "path": "/shaurma",
         "id": 2,
         "h1": "Шаурма"
       },
 
-      [
+      "foodInfo": [
         {
           "name": "Мясная шаурма",
           "weight": "520г",
@@ -202,7 +202,7 @@
           "resultPrice": 639
         },
         {
-          "name": " Шаурма - Тяжелый удар",
+          "name": "Тяжелая Шаурма",
           "weight": "470г",
           "price": 480,
           "img": "./src/assets/burger4.png",
@@ -253,15 +253,15 @@
           "resultPrice": 560
         }
       ]
-    ],
-    [
-      {
-        "path": "snacks",
+    },
+    {
+      "foodId": {
+        "path": "/snacks",
         "id": 3,
         "h1": "Закуски"
       },
 
-      [
+      "foodInfo": [
         {
           "name": "Начос",
           "weight": "220г",
@@ -315,15 +315,15 @@
           "resultPrice": 230
         }
       ]
-    ],
-    [
-      {
-        "path": "hotDogs",
+    },
+    {
+      "foodId": {
+        "path": "/hotDogs",
         "id": 4,
         "h1": "Хот-доги"
       },
 
-      [
+      "foodInfo": [
         {
           "name": "Домашний хот-дог",
           "weight": "250г",
@@ -377,6 +377,6 @@
           "resultPrice": 220
         }
       ]
-    ]
+    }
   ]
 }

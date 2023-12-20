@@ -5,7 +5,7 @@ import FoodBox from "./FoodBox/FoodBox.jsx";
 import FoodCards from "../../Pages/Burgers/FoodCards.jsx";
 import FoodModal from "./FoodModal/FoodModal.jsx";
 import Error from "../../Pages/Error/Error.jsx";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 export default function Main() {
   // Main
@@ -23,6 +23,7 @@ export default function Main() {
     setShowModal(true);
     setIndexUser(id);
     setIndexArr(arrId)
+
   }
 
   // FoodBox
@@ -57,14 +58,13 @@ export default function Main() {
     setBurgersValue(burgersValue + copyActiveBurger.resultCount);
     setBurgersArrActive((prevstate) => [...prevstate, copyActiveBurger]);
   }
-  
+  console.log();
   return (
     <>
-      <Router>
         <main>
           {showModal && (
             <FoodModal
-              item={(foodArrAll[indexArr - 1][1][indexUser - 1])}
+              item={(foodArrAll[indexArr - 1].foodInfo[indexUser - 1])}
               setShowModal={setShowModal}
               addActiveBurger={addActiveBurger}
             />
@@ -85,16 +85,16 @@ export default function Main() {
                 <Routes>
                   {foodArrAll.map((item) => {
                     return <Route
-                      path={item[0].path}
-                      key={item[0].id}
+                      path={item.foodId.path}
+                      key={item.foodId.id}
                       element={
                         <FoodCards
-                          item={item[1]}
+                          item={item.foodInfo}
                           setFoodArrAll={setFoodArrAll}
                           openModalWindow={openModalWindow}
                           addActiveBurger={addActiveBurger}
-                          id={item[0].id}
-                          name={item[0].h1}
+                          id={item.foodId.id}
+                          name={item.foodInfo.h1}
                         />
                       }
                     />;
@@ -105,7 +105,6 @@ export default function Main() {
             </div>
           </div>
         </main>
-      </Router>
     </>
   );
 }

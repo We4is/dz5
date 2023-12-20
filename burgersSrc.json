@@ -9,28 +9,28 @@
     },
     {
         "name": "Шаурма",
-        "path": "shaurma",
+        "path": "/shaurma",
         "img": "./src/assets/burito.png",
         "style": "header_box",
         "id": 2
     },
     {
         "name": "Десерты",
-        "path": "desserts",
+        "path": "/desserts",
         "img": "./src/assets/doughnut.png",
         "style": "header_box",
         "id": 3
     },
     {
         "name": "Комбо",
-        "path": "combo",
+        "path": "/combo",
         "img": "./src/assets/fastfood.png",
         "style": "header_box",
         "id": 4
     },
     {
         "name": "Хот-Доги",
-        "path": "hotDogs",
+        "path": "/hotDogs",
         "img": "./src/assets/hotdog.png",
         "style": "header_box",
         "id": 5
@@ -44,21 +44,21 @@
     },
     {
         "name": "Вок",
-        "path": "vok",
+        "path": "/vok",
         "img": "./src/assets/noodles.png",
         "style": "header_box",
         "id": 7
     },
     {
         "name": "Закуски",
-        "path": "snacks",
+        "path": "/snacks",
         "img": "./src/assets/onion.png",
         "style": "header_box",
         "id": 8
     },
     {
         "name": "Пицца",
-        "path": "pizza",
+        "path": "/pizza",
         "img": "./src/assets/pizza.png",
         "style": "header_box",
         "id": 9
