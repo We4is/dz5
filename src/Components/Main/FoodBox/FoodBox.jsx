@@ -9,7 +9,7 @@ export default function FoodBox({
   burgersArrActive,
   setBurgersArrActive,
   setEndPrice,
-  endPrice,
+  endPrice
 }) {
   function sumCount(solveElem) {
     setBurgersValue(burgersValue + solveElem);

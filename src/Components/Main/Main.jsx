@@ -9,14 +9,14 @@ import { Route, Routes } from "react-router-dom";
 
 export default function Main() {
   // Main
-  const [foodArrAll, setFoodArrAll] = useState(burgersArr.AllFood);
-  const [burgersArrActive, setBurgersArrActive] = useState(
-    burgersArr.burgersActive
-  );
+  
+  const [foodArrAll] = useState(burgersArr.AllFood);
+  const [burgersArrActive, setBurgersArrActive] = useState(burgersArr.burgersActive);
   const [indexUser, setIndexUser] = useState(0);
   const [indexArr, setIndexArr] = useState(0);
 
   // Modal
+
   const [showModal, setShowModal] = useState(false);
 
   function openModalWindow(id, arrId) {
@@ -27,6 +27,7 @@ export default function Main() {
   }
 
   // FoodBox
+
   let sum = 0;
   burgersArrActive.forEach((item) => {
     sum += item.resultPrice;
@@ -40,7 +41,6 @@ export default function Main() {
     );
 
     const copyActiveBurger = { ...activeBurger };
-
     if (burgersArrActive.length !== 0) {
       const lastId = burgersArrActive[burgersArrActive.length - 1].id;
       copyActiveBurger.id = lastId + 1;
@@ -48,17 +48,24 @@ export default function Main() {
       const lastId = 1;
       copyActiveBurger.id = lastId + 1;
     }
-
-    if (trueUser) {
-      return;
-    }
-    
-    copyActiveBurger.resultCount = countModal;
     setEndPrice(endPrice + activeBurger.price * copyActiveBurger.resultCount);
     setBurgersValue(burgersValue + copyActiveBurger.resultCount);
+    if (trueUser) {
+      // burgersArrActive.forEach(item =>{
+      //   if(item.name == copyActiveBurger.name){
+      //     copyActiveBurger.resultCount += 1;
+      //   }
+      // })
+      // setBurgersArrActive((prevstate) => [...prevstate, copyActiveBurger]);
+      return
+    }
+    copyActiveBurger.resultCount = countModal;
     setBurgersArrActive((prevstate) => [...prevstate, copyActiveBurger]);
   }
-  console.log();
+
+
+
+
   return (
     <>
         <main>
@@ -90,11 +97,10 @@ export default function Main() {
                       element={
                         <FoodCards
                           item={item.foodInfo}
-                          setFoodArrAll={setFoodArrAll}
                           openModalWindow={openModalWindow}
                           addActiveBurger={addActiveBurger}
                           id={item.foodId.id}
-                          name={item.foodInfo.h1}
+                          name={item.foodId.h1}
                         />
                       }
                     />;
