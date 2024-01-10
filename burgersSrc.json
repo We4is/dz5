@@ -37,7 +37,7 @@
     },
     {
         "name": "Соусы",
-        "path": "sauce",
+        "path": "/sauce",
         "img": "./src/assets/ketchup.png",
         "style": "header_box",
         "id": 6
