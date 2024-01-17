@@ -6,6 +6,7 @@ import FoodCards from "../../Pages/Burgers/FoodCards.jsx";
 import FoodModal from "./FoodModal/FoodModal.jsx";
 import Error from "../../Pages/Error/Error.jsx";
 import { Route, Routes } from "react-router-dom";
+import Basket from './../../Pages/Basket/Basket';
 
 export default function Main() {
   // Main
@@ -105,6 +106,7 @@ export default function Main() {
                       }
                     />;
                   })}
+                  <Route path="/basket" element={<Basket />} />
                   <Route path="*" element={<Error />} />
                 </Routes>
               

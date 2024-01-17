@@ -2,6 +2,7 @@
 import "./FoodBox.scss";
 import FoodBoxCard from "./FoodBoxCard/FoodBoxCard.jsx";
 import skuter from "../../../assets/skuter.png";
+import { NavLink } from "react-router-dom";
 
 export default function FoodBox({
   burgersValue,
@@ -50,7 +51,9 @@ export default function FoodBox({
           <span>{endPrice}Р</span>
         </div>
         <div className="main_container-active-button">
-          <button>Оформить заказ</button>
+          <NavLink to="/basket">
+            <button>Оформить заказ</button>
+          </NavLink>
           <div className="main_container-active-button-text">
             <img src={skuter} alt="" /> <p>Бесплатная доставка</p>
           </div>
